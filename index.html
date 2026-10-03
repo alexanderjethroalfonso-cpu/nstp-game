@@ -147,6 +147,8 @@ button{font:inherit;color:inherit;border:none;background:none;cursor:pointer;tou
 @keyframes lateGlow{to{box-shadow:0 0 0 5px var(--yellow)}}
 .money{font-size:calc(var(--u)*5.6);background:var(--green);border-radius:99px;padding:.05em .55em;border:3px solid #000;text-shadow:var(--ol);white-space:nowrap}
 .money.bump{animation:bump .3s}
+.money.fine{animation:fineFlash .5s}
+@keyframes fineFlash{0%,60%{background:var(--red);transform:scale(1.25) rotate(-6deg)}}
 .stage{flex:1;width:100%;display:flex;flex-direction:column;position:relative;min-height:0}
 .stage.lipat{animation:lipat 1.8s ease-in-out}
 @keyframes lipat{0%{transform:none}40%{transform:translateX(-120%) rotate(-5deg)}40.1%{transform:translateX(120%) rotate(5deg)}100%{transform:none}}
@@ -674,7 +676,9 @@ const FX = (function(){
     slam(e){ $$('.slamE').forEach(m => m.remove()); const d = document.createElement('div'); d.className = 'slamE'; d.textContent = e; $('#pops').appendChild(d); setTimeout(() => d.remove(), 760); },
     pop(x, y, txt, cls, dur){
       const d = document.createElement('div'); d.className = 'pop ' + (cls || ''); d.innerHTML = txt;
-      d.style.left = x + 'px'; d.style.top = y + 'px'; $('#pops').appendChild(d);
+      $('#pops').appendChild(d);
+      const hw = d.offsetWidth / 2 + 8;   // keep popups fully on screen
+      d.style.left = Math.max(hw, Math.min(innerWidth - hw, x)) + 'px'; d.style.top = y + 'px';
       setTimeout(() => d.remove(), dur || (cls && cls.indexOf('say') >= 0 ? 1400 : 950));
     },
     banner(html, color, dur){
@@ -938,7 +942,8 @@ function startDay(){
     rainMul:1, nid:0, hintOn: p.day === 1, forcedNormal: p.day === 1 ? 2 : 0, last:now(), lateWarn:false,
     units:s.items.map((_, i) => i < p.stock ? SHELF_UNITS : 0), rs:[0, 0, 0, 0], hype:0, hyperT:0, fiestaT:0, darkT:0,
     ads:[], adT:rand(5, 9), sukli:null, flies:[], flyT:0, boss: adv ? { at:rand(16, 32), done:false } : null,
-    chatT:0.4, bombT:rand(3, 6), viewers:100 + Math.floor(rand(0, 90)), vT:0, scams:0, sukliOk:0, swats:0, bossServed:0 };
+    chatT:0.4, bombT:rand(3, 6), viewers:100 + Math.floor(rand(0, 90)), vT:0, scams:0, sukliOk:0, swats:0, bossServed:0,
+    wrong:0, fines:0, wrongStreak:0, lastWrong:-99 };
   $('#rush').className = 'screen';
   $('#rush').innerHTML =
     '<div class="hud">' +
@@ -1143,9 +1148,23 @@ function onItem(e){
   if (i >= R.p.stock) { noGood(b, 'WALANG PUHUNAN! 😅'); Snd.bonk(); return; }
   if (R.units[i] <= 0) { restockTap(i, b); return; }
   const c = R.custs.filter(x => !x.gone && !x.paying && x.order.some((it, k) => it === i && !x.got[k])).sort((a, b2) => a.id - b2.id)[0];
-  if (!c) { noGood(b, 'Walang bibili niyan! 🤨'); Snd.vineBoom(); FX.slam('🤨'); FX.shake(2); breakCombo(); chat('bruh 🤨'); return; }
+  if (!c) { wrongTap(b); return; }
   if (c.tita) { titaMoment(c); return; }
   give(c, i);
+}
+// Wrong product: fine that doubles while you keep mashing (₱5 → ₱10 → ₱20), plus HYPE loss.
+function wrongTap(b){
+  R.wrongStreak = R.t - R.lastWrong < 2 ? R.wrongStreak + 1 : 1;
+  R.lastWrong = R.t;
+  const fine = Math.min(20, 5 * Math.pow(2, R.wrongStreak - 1)), lost = Math.min(fine, R.kita);
+  R.kita -= lost; R.wrong++; R.fines += lost;
+  paintMoney();
+  const m = $('#hudMoney'); if (m) { m.classList.remove('fine'); void m.offsetWidth; m.classList.add('fine'); }
+  if (R.hyperT <= 0) { R.hype = Math.max(0, R.hype - 25); paintHype(); }
+  noGood(b, lost > 0 ? 'MALI! -₱' + lost + ' 🤨' : 'MALI! 🤨');
+  Snd.vineBoom(); FX.slam('🤨'); FX.shake(2); breakCombo();
+  chat(pick(['MALI 🤨', 'bruh', 'huy mali', 'ano ba yan teh', 'sayang pera 💸']));
+  Voice.say(R.wrongStreak > 1 ? 'Mali na naman!' : 'Mali!', true);
 }
 function restockTap(i, b){
   R.rs[i]++; Snd.tick(R.rs[i] * 4);
@@ -1464,7 +1483,7 @@ function endDay(){
   const p = R.p;
   p.kitaByDay.push(R.kita); p.sales += R.sales; p.lost += R.lost; p.bestCombo = Math.max(p.bestCombo, R.bestCombo);
   p.lastEvents = R.evLog.slice();
-  const snap = { kita:R.kita, sales:R.sales, lost:R.lost, best:R.bestCombo, ubos:R.ubos, tita:R.tita, scams:R.scams, sukliOk:R.sukliOk, swats:R.swats, boss:R.bossServed };
+  const snap = { kita:R.kita, sales:R.sales, lost:R.lost, best:R.bestCombo, ubos:R.ubos, tita:R.tita, scams:R.scams, sukliOk:R.sukliOk, swats:R.swats, boss:R.bossServed, wrong:R.wrong, fines:R.fines };
   setTimeout(() => renderSummary(snap), 1500 / Math.min(SPEED, 3));
 }
 
@@ -1483,7 +1502,7 @@ function renderSummary(d){
     '<div class="sub">KITA NGAYONG ARAW</div>' +
     '<div class="bigmoney" id="sumMoney">₱0</div>' +
     '<div class="stats">' + stat('🛒', d.sales, 'benta') + stat('🔥', 'x' + d.best, 'combo') + stat('😩', d.lost, 'awit') +
-      (d.sukliOk ? stat('🧠', d.sukliOk, 'tamang sukli') : '') + (d.scams ? stat('🤡', d.scams, 'na-scam') : '') +
+      (d.sukliOk ? stat('🧠', d.sukliOk, 'tamang sukli') : '') + (d.scams ? stat('🤡', d.scams, 'na-scam') : '') + (d.wrong ? stat('❌', d.wrong, 'mali (-₱' + d.fines + ')') : '') +
       (d.boss ? stat('👸', d.boss, 'boss') : '') + (d.ubos ? stat('📦', d.ubos, 'ubos') : '') + (d.tita ? stat('🗿', d.tita, 'tita') : '') + '</div>' +
     (notes.length ? '<div class="chip" style="font-size:calc(var(--u)*3.2);white-space:normal;text-align:center">' + notes.join(' · ') + '</div>' : '') +
     '<button class="btn big wig" data-a="tojars" style="--bg:var(--green)">' + (d.kita > 0 ? 'HATIIN ANG KITA! ▶' : (p.day < DAYS ? 'BUKAS ULIT! ▶' : 'TINGNAN ANG SCORE! ▶')) + '</button>';

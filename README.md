@@ -26,6 +26,7 @@ Turn the iPad sideways. Turn the silent switch off if you want sound. The 🔊 b
    - 👸 **Ninang Galante** (the boss) shows up once a day with a 5-item order: double kita + ₱50.
    - Fill the 🔥 **HYPE** meter with fast sales, then tap it for 8 seconds of HYPER MODE (double kita).
    - Ignore Tita na Nagtatanong Lang 🧐: she never buys and costs you 3 seconds.
+   - **Wrong product = fine.** Tapping an item nobody asked for costs ₱5, then ₱10, then ₱20 if you keep mashing. It also drains the HYPE meter and breaks your combo.
 3. **Events:** day 2 gets one, days 3–5 get two each.
    - 🌧️ **ULAN** cuts customers in half.
    - 🚚 **Lipat Pwesto** costs 10 seconds.
