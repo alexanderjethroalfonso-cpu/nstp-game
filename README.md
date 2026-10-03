@@ -8,8 +8,11 @@ Open `index.html`. Everything is in that one file: no internet, fonts, images or
 
 **Put it on the iPad**
 
-- **Easiest (fully offline):** AirDrop or save `index.html` to the iPad's Files app, then tap it to open it.
-- **Fullscreen home-screen app:** host the folder (GitHub Pages works), open it once in Safari, then tap Share → **Add to Home Screen**. The small optional `sw.js` saves a copy on that first visit, so the home-screen app still opens in airplane mode afterward.
+1. Host the folder on a website. GitHub Pages works (repo Settings → Pages → deploy from this branch, root folder). Free Pages needs a public repo.
+2. On the iPad, open the link in Safari, then tap Share → **Add to Home Screen**.
+3. Open the new home-screen icon **once while online**. The small `sw.js` saves a copy then, so the icon works in airplane mode afterward.
+
+Opening `index.html` straight from the Files app only shows a preview, and the buttons may not work there. Use the home-screen way.
 
 Turn the iPad sideways. Turn the silent switch off if you want sound. The 🔊 button mutes.
 
