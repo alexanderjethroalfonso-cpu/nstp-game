@@ -32,7 +32,7 @@ button{font:inherit;color:inherit;border:none;background:none;cursor:pointer;tou
 /* ---------- background ---------- */
 #bg{position:fixed;left:50%;top:50%;width:200vmax;height:200vmax;margin:-100vmax 0 0 -100vmax;
   background:repeating-conic-gradient(from 0deg,#8f3dff 0deg 9deg,#7b2ff7 9deg 18deg);
-  animation:spin 60s linear infinite;z-index:0}
+  animation:spin 22s linear infinite;z-index:0}
 @keyframes spin{to{transform:rotate(360deg)}}
 #app{position:fixed;inset:0;z-index:1;overflow:hidden}
 
@@ -66,7 +66,7 @@ button{font:inherit;color:inherit;border:none;background:none;cursor:pointer;tou
 #mute:active{transform:translateY(3px)}
 
 /* ---------- title ---------- */
-.logo{display:flex;flex-wrap:wrap;justify-content:center;gap:0 calc(var(--u)*1.5);font-size:calc(var(--u)*14.5);text-shadow:var(--ol);line-height:.95;max-width:92vw}
+.logo{display:flex;flex-wrap:wrap;justify-content:center;gap:0 calc(var(--u)*1.5);font-size:calc(var(--u)*13);text-shadow:var(--ol);line-height:.95;max-width:92vw}
 .logo .w{display:flex}
 .logo span{display:inline-block;animation:bounceL 1s ease-in-out infinite}
 @keyframes bounceL{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-12%) rotate(3deg)}}
@@ -150,7 +150,7 @@ button{font:inherit;color:inherit;border:none;background:none;cursor:pointer;tou
 .stage{flex:1;width:100%;display:flex;flex-direction:column;position:relative;min-height:0}
 .stage.lipat{animation:lipat 1.8s ease-in-out}
 @keyframes lipat{0%{transform:none}40%{transform:translateX(-120%) rotate(-5deg)}40.1%{transform:translateX(120%) rotate(5deg)}100%{transform:none}}
-.awning{--a1:#ff2e88;height:calc(var(--u)*6);flex:none;position:relative;background:repeating-linear-gradient(90deg,var(--a1) 0 calc(var(--u)*7),#fff calc(var(--u)*7) calc(var(--u)*14));border-bottom:4px solid var(--ink)}
+.awning{--a1:#ff2e88;height:calc(var(--u)*8);flex:none;position:relative;background:repeating-linear-gradient(90deg,var(--a1) 0 calc(var(--u)*7),#fff calc(var(--u)*7) calc(var(--u)*14));border-bottom:4px solid var(--ink)}
 .awning .sign{position:absolute;left:50%;top:40%;transform:translateX(-50%) rotate(-2deg);background:var(--yellow);color:var(--ink);border:4px solid var(--ink);border-radius:12px;font-size:calc(var(--u)*3.6);padding:.15em .8em;white-space:nowrap;box-shadow:0 5px 0 var(--ink);z-index:2}
 .street{flex:1;display:flex;align-items:stretch;padding:calc(var(--u)*4) calc(var(--u)*1) calc(var(--u)*1);gap:calc(var(--u)*1);min-height:0;position:relative}
 .slot{flex:1;position:relative;display:flex;align-items:flex-end;justify-content:center;min-width:0}
@@ -223,11 +223,11 @@ button{font:inherit;color:inherit;border:none;background:none;cursor:pointer;tou
 #fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
 
 /* ---------- summary ---------- */
-.bigmoney{font-size:calc(var(--u)*18);text-shadow:var(--ol);color:var(--lime);line-height:1}
-.stats{display:flex;gap:calc(var(--u)*2);flex-wrap:wrap;justify-content:center}
-.stat{background:#fff;color:var(--ink);border:4px solid var(--ink);border-radius:calc(var(--u)*3);padding:calc(var(--u)*1.2) calc(var(--u)*2.5);display:flex;flex-direction:column;align-items:center;font-size:calc(var(--u)*3);min-width:calc(var(--u)*20);box-shadow:0 6px 0 var(--ink)}
-.stat b{font-size:calc(var(--u)*6)}
-.stat .e{font-size:calc(var(--u)*6)}
+.bigmoney{font-size:calc(var(--u)*15);text-shadow:var(--ol);color:var(--lime);line-height:1}
+.stats{display:flex;gap:calc(var(--u)*1.5);flex-wrap:wrap;justify-content:center;max-width:94vw}
+.stat{background:#fff;color:var(--ink);border:4px solid var(--ink);border-radius:calc(var(--u)*3);padding:calc(var(--u)*.8) calc(var(--u)*1.6);display:flex;flex-direction:column;align-items:center;font-size:calc(var(--u)*2.6);min-width:calc(var(--u)*14);box-shadow:0 5px 0 var(--ink);white-space:nowrap}
+.stat b{font-size:calc(var(--u)*5)}
+.stat .e{font-size:calc(var(--u)*4.6)}
 
 /* ---------- jars ---------- */
 #jars{justify-content:space-between}
@@ -275,11 +275,85 @@ button{font:inherit;color:inherit;border:none;background:none;cursor:pointer;tou
 .vpan .ip{font-size:calc(var(--u)*11);color:var(--lime)}
 .vpan .rk{font-size:calc(var(--u)*4.2);background:#fff;color:var(--ink);text-shadow:none;border:3px solid var(--ink);border-radius:99px;padding:.1em .6em;white-space:nowrap}
 .vpan .mini{font-size:calc(var(--u)*3);text-shadow:none;opacity:.95;white-space:nowrap}
-.vpan .crown{position:absolute;top:calc(var(--u)*-6);right:calc(var(--u)*-4);font-size:calc(var(--u)*11);animation:wig .8s infinite;display:none}
+.vpan .crown{position:absolute;top:calc(var(--u)*-6);right:calc(var(--u)*1);font-size:calc(var(--u)*9);animation:wig .8s infinite;display:none}
 .vpan.win .crown{display:block}
 .vpan.win{transform:scale(1.04)}
 .vpan.win .crown{transform:rotate(20deg)}
 .vmid{display:flex;align-items:center;font-size:calc(var(--u)*9);text-shadow:var(--ol)}
+
+/* ---------- CHAOS EDITION ---------- */
+#bgtint{position:fixed;inset:0;z-index:0;opacity:.3;pointer-events:none;animation:tintCycle 6s linear infinite}
+@keyframes tintCycle{0%,100%{background:#ff2e88}20%{background:#ffd60a}40%{background:#6bff3d}60%{background:#00c2ff}80%{background:#b06bff}}
+.chaos{display:inline-block;background:var(--pink);color:#fff;border:4px solid var(--ink);border-radius:12px;padding:.05em .6em;font-size:calc(var(--u)*4.2);text-shadow:var(--ol);box-shadow:0 5px 0 var(--ink);animation:chaosPulse .55s ease-in-out infinite alternate}
+@keyframes chaosPulse{from{transform:rotate(-5deg)}to{transform:rotate(5deg) scale(1.1);background:var(--orange)}}
+.awning .sign{left:calc(var(--sal) + var(--u)*2);transform:rotate(-2deg);top:18%}
+.live{position:absolute;right:calc(var(--sar) + var(--u)*2);top:18%;z-index:2;background:#ff1744;color:#fff;border:3px solid var(--ink);border-radius:10px;padding:.1em .5em;font-size:calc(var(--u)*3.2);text-shadow:var(--ol);white-space:nowrap;display:flex;align-items:center;gap:.3em;box-shadow:0 4px 0 var(--ink)}
+.live .dot{width:.6em;height:.6em;border-radius:50%;background:#fff;animation:blink 1.2s steps(2) infinite}
+@keyframes blink{50%{opacity:.15}}
+.chatlane{position:absolute;inset:0;overflow:hidden;z-index:1;pointer-events:none}
+.cm{position:absolute;top:50%;left:100%;white-space:nowrap;font-size:calc(var(--u)*2.9);text-shadow:var(--ol);animation:cmFly 5.5s linear forwards;transform:translateY(-50%)}
+@keyframes cmFly{to{transform:translate(calc(-100vw - 100%),-50%)}}
+.street{transition:transform .08s ease-out;transform-origin:50% 100%}
+.street.thump{transform:scale(1.018)}
+.item .cnt{position:absolute;top:calc(var(--u)*.8);left:calc(var(--u)*1);background:var(--ink);color:#fff;border-radius:99px;padding:0 .45em;font-size:calc(var(--u)*2.8)}
+.item .cnt.low{background:var(--red);animation:wig .35s infinite}
+.item .rs{position:absolute;inset:0;border-radius:inherit;background:rgba(255,30,60,.9);display:none;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-shadow:var(--ol);gap:.25em}
+.item.empty .rs{display:flex;animation:wig .3s infinite}
+.item .rs b{font-size:calc(var(--u)*5.5)}
+.item .rs span{font-size:calc(var(--u)*3.2)}
+.item .rs i{display:block;width:70%;height:calc(var(--u)*2.2);min-height:10px;border:3px solid var(--ink);border-radius:99px;background:linear-gradient(90deg,var(--lime) var(--p,0%),rgba(255,255,255,.45) var(--p,0%))}
+.item .ubos b{font-size:calc(var(--u)*3);text-align:center;line-height:1.1}
+.hype{flex:none;width:calc(var(--u)*15);min-width:80px;position:relative;overflow:hidden;border:calc(var(--u)*.7) solid var(--ink);border-radius:calc(var(--u)*3.5);background:#3a1757;
+  box-shadow:0 calc(var(--u)*1.2) 0 var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-shadow:var(--ol);font-size:calc(var(--u)*3.6);touch-action:none}
+.hype .hf{position:absolute;left:0;right:0;bottom:0;height:var(--h,0%);background:linear-gradient(0deg,#ff2e88,#ffd60a);transition:height .2s}
+.hype .e,.hype b{position:relative}
+.hype .e{font-size:calc(var(--u)*7)}
+.hype.ready{animation:hypeReady .4s ease-in-out infinite alternate}
+@keyframes hypeReady{to{transform:scale(1.07) rotate(3deg);box-shadow:0 0 0 calc(var(--u)*1) var(--yellow),0 0 calc(var(--u)*5) var(--yellow)}}
+#rush.hyper{background:linear-gradient(#ff2e88,#ffd60a 62%,#6bff3d 62.2%,#00c2ff)}
+#rush.hyper .street{animation:hyperHue 1.8s linear infinite}
+@keyframes hyperHue{to{filter:hue-rotate(360deg)}}
+#rush.hyper .face{animation-duration:.22s}
+.bubble .want{display:flex;flex-wrap:wrap;justify-content:center;gap:0 .08em;max-width:calc(var(--u)*30)}
+.bubble .want.n2,.bubble .want.n3{font-size:calc(var(--u)*6.4)}
+.bubble .want.n5{font-size:calc(var(--u)*4.8)}
+.wi{position:relative;display:inline-block;transition:transform .15s,opacity .15s}
+.wi.got{opacity:.3;transform:scale(.75)}
+.wi.got::after{content:"✔";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--green);font-family:var(--font);font-weight:900;font-size:.9em;opacity:1}
+.bmark{position:absolute;top:calc(var(--u)*-1.8);right:calc(var(--u)*-1.6);z-index:2;font-weight:900;line-height:1}
+.bmark.x2{background:var(--yellow);border:2px solid var(--ink);border-radius:99px;padding:.05em .3em;color:var(--ink);font-size:calc(var(--u)*3)}
+.bmark.q{color:var(--pink);font-size:calc(var(--u)*5.5);text-shadow:0 2px 0 var(--ink)}
+.bmark.no{font-size:calc(var(--u)*5)}
+.cust.boss .face{font-size:calc(var(--u)*15)}
+.cust.boss .bubble{background:#fff3b0;box-shadow:0 0 0 calc(var(--u)*.7) var(--yellow),0 0 calc(var(--u)*4) var(--yellow)}
+#layer{position:absolute;inset:0;z-index:15;pointer-events:none}
+#layer>*{pointer-events:auto}
+.ad{position:absolute;width:min(36vw,calc(var(--u)*46));padding:calc(var(--u)*1.5) calc(var(--u)*2);background:repeating-linear-gradient(45deg,#ffe600 0 18px,#ffcc00 18px 36px);color:#d0003a;
+  border:calc(var(--u)*.7) dashed #ff004c;outline:calc(var(--u)*.6) solid var(--ink);border-radius:calc(var(--u)*2);display:flex;flex-direction:column;align-items:center;text-align:center;gap:.2em;
+  animation:adIn .4s cubic-bezier(.3,1.7,.5,1),adWig .5s .4s ease-in-out infinite alternate;box-shadow:0 calc(var(--u)*1.5) 0 rgba(0,0,0,.4);touch-action:none}
+.ad.bye{transform:scale(0) rotate(30deg);transition:transform .2s;animation:none}
+.ad .adt{position:absolute;top:4px;left:6px;background:#888;color:#fff;font-size:calc(var(--u)*2.2);padding:0 .4em;border-radius:4px}
+.ad .ae{font-size:calc(var(--u)*9)}
+.ad .a1{font-size:calc(var(--u)*3.8);line-height:1.05}
+.ad .a2{font-size:calc(var(--u)*2.8);color:var(--ink)}
+.ad .ax{position:absolute;top:-30px;right:-30px;width:80px;height:80px;border-radius:50%;background:#fff;border:4px solid var(--ink);color:var(--ink);font-size:34px;box-shadow:0 4px 0 var(--ink)}
+@keyframes adIn{from{transform:scale(0) rotate(-20deg)}}
+@keyframes adWig{from{transform:rotate(-2deg)}to{transform:rotate(2deg) scale(1.03)}}
+.sukli{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);background:#fff;color:var(--ink);border:calc(var(--u)*.8) solid var(--ink);border-radius:calc(var(--u)*4);padding:calc(var(--u)*2) calc(var(--u)*3);
+  display:flex;flex-direction:column;align-items:center;gap:calc(var(--u)*1.2);box-shadow:0 calc(var(--u)*1.5) 0 var(--ink);animation:sukIn .35s cubic-bezier(.3,1.7,.5,1);white-space:nowrap;z-index:2}
+@keyframes sukIn{from{transform:translate(-50%,-50%) scale(.3)}}
+.sukli .sq{font-size:calc(var(--u)*3.8)}
+.sukli .sq2{font-size:calc(var(--u)*6);color:var(--pink)}
+.sopts{display:flex;gap:calc(var(--u)*2)}
+.sbtn{font-size:calc(var(--u)*6);min-width:calc(var(--u)*22);--bg:var(--cyan)}
+.stime{width:100%;height:14px;border:3px solid var(--ink);border-radius:99px;overflow:hidden}
+.stime i{display:block;height:100%;background:var(--orange);transform-origin:0 50%}
+.fly{position:absolute;left:0;top:0;width:80px;height:80px;display:flex;align-items:center;justify-content:center;font-size:46px;touch-action:none;filter:drop-shadow(0 4px 2px rgba(0,0,0,.4));z-index:1}
+#rush .dark{position:absolute;inset:0;z-index:14;pointer-events:none;opacity:0;transition:opacity .4s;--x:50vw;--y:60vh;
+  background:radial-gradient(circle at var(--x) var(--y),transparent 0,transparent calc(var(--u)*16),rgba(0,0,10,.96) calc(var(--u)*27))}
+#rush.brownout .dark{opacity:1}
+.slamE{position:absolute;left:50%;top:45%;font-size:calc(var(--u)*34);transform:translate(-50%,-50%);animation:slamE .75s ease-out forwards;pointer-events:none;font-family:var(--emoji);z-index:3}
+@keyframes slamE{0%{transform:translate(-50%,-50%) scale(4);opacity:0}15%{transform:translate(-50%,-50%) scale(1);opacity:1}70%{transform:translate(-50%,-50%) scale(1.1) rotate(-8deg);opacity:1}100%{transform:translate(-50%,-50%) scale(1.3);opacity:0}}
 
 #rotate{position:fixed;inset:0;z-index:100;background:var(--purple);display:none;flex-direction:column;align-items:center;justify-content:center;gap:20px;font-size:32px;text-shadow:var(--ol);text-align:center;padding:20px}
 #rotate .e{font-size:90px;animation:rot 1.6s ease-in-out infinite}
@@ -288,7 +362,7 @@ button{font:inherit;color:inherit;border:none;background:none;cursor:pointer;tou
 </style>
 </head>
 <body>
-<div id="bg"></div>
+<div id="bg"></div><div id="bgtint"></div>
 <div id="app">
   <section class="screen" id="title"></section>
   <section class="screen" id="tut"></section>
@@ -328,9 +402,9 @@ const Store = {
 
 /* ============ sound (Web Audio only) ============ */
 const Snd = (function(){
-  let ctx = null, master = null, nbuf = null, rainSrc = null, rainGain = null;
+  let ctx = null, master = null, nbuf = null, rainSrc = null, rainGain = null, buzz = null;
   let muted = !!Store.get('tr_muted', false);
-  const mus = { on:false, timer:null, next:0, step:0, bpm:128, bus:null, lp:null };
+  const mus = { on:false, timer:null, next:0, step:0, bpm:128, bus:null, lp:null, layer:0 };
 
   function init(){
     if (ctx) { if (ctx.state === 'suspended') { try { ctx.resume(); } catch (e) {} } return; }
@@ -340,7 +414,7 @@ const Snd = (function(){
       ctx = new AC();
       const comp = ctx.createDynamicsCompressor();
       comp.threshold.value = -12; comp.knee.value = 8; comp.ratio.value = 5; comp.attack.value = 0.003; comp.release.value = 0.2;
-      master = ctx.createGain(); master.gain.value = muted ? 0 : 0.9;
+      master = ctx.createGain(); master.gain.value = muted ? 0 : 1;
       master.connect(comp); comp.connect(ctx.destination);
       const b = ctx.createBuffer(1, 1, 22050), s = ctx.createBufferSource(); s.buffer = b; s.connect(ctx.destination); s.start(0);
       if (ctx.state === 'suspended') ctx.resume();
@@ -390,7 +464,7 @@ const Snd = (function(){
   const S = {
     init,
     get muted(){ return muted; },
-    setMuted(m){ muted = m; Store.set('tr_muted', m); if (ok()) master.gain.setTargetAtTime(m ? 0 : 0.9, ctx.currentTime, 0.02); },
+    setMuted(m){ muted = m; Store.set('tr_muted', m); if (ok()) master.gain.setTargetAtTime(m ? 0 : 1, ctx.currentTime, 0.02); },
     tap(){ tone(520, 0.07, { type:'square', vol:0.09, f2:820 }); },
     pop(){ tone(240, 0.1, { vol:0.22, f2:700 }); tone(700, 0.06, { type:'triangle', vol:0.08, delay:0.05, f2:1100 }); },
     boing(){ tone(180, 0.25, { type:'triangle', vol:0.25, f2:520, glide:0.08, vib:18, vibAmt:40 }); },
@@ -455,7 +529,33 @@ const Snd = (function(){
     },
     musicStop(){ mus.on = false; if (mus.timer) clearInterval(mus.timer); mus.timer = null; if (mus.bus) { try { mus.bus.gain.setTargetAtTime(0.0001, ctx.currentTime, 0.05); } catch (e) {} } mus.bus = null; },
     musicMuffle(on){ if (mus.lp && ok()) mus.lp.frequency.setTargetAtTime(on ? 700 : 14000, ctx.currentTime, 0.3); },
-    musicTempo(bpm){ mus.bpm = bpm; }
+    musicTempo(bpm){ mus.bpm = bpm; },
+    musicLayer(n){ mus.layer = n; },
+    onBeat:null,
+    vineBoom(){ tone(120, 0.9, { vol:0.9, f2:36, glide:0.5 }); tone(60, 0.9, { type:'triangle', vol:0.5, f2:30 }); noise(0.3, { ft:'lowpass', f:900, vol:0.6 }); },
+    rooster(){
+      tone(700, 0.12, { type:'sawtooth', vol:0.12, f2:950, lp:3000 });
+      tone(900, 0.12, { type:'sawtooth', vol:0.12, f2:1150, delay:0.15, lp:3000 });
+      tone(1150, 0.7, { type:'sawtooth', vol:0.14, f2:650, delay:0.31, vib:9, vibAmt:70, lp:3200, sus:true });
+    },
+    jeep(){ [0, 0.24].forEach(d => { tone(440, 0.2, { type:'square', vol:0.13, delay:d, sus:true, lp:2500 }); tone(554, 0.2, { type:'square', vol:0.11, delay:d, sus:true, lp:2500 }); }); },
+    siren(){ for (let i = 0; i < 3; i++) { tone(700, 0.3, { type:'sawtooth', vol:0.09, f2:1150, delay:i * 0.6, sus:true, lp:2600 }); tone(1150, 0.3, { type:'sawtooth', vol:0.09, f2:700, delay:i * 0.6 + 0.3, sus:true, lp:2600 }); } },
+    bruh(){ tone(150, 0.55, { type:'sawtooth', vol:0.28, f2:95, lp:700, sus:true, vib:5, vibAmt:6 }); },
+    bell(){ for (let i = 0; i < 6; i++) { tone(1900, 0.12, { vol:0.13, delay:i * 0.09 }); tone(2450, 0.1, { vol:0.07, delay:i * 0.09 + 0.02 }); } },
+    slide(up){ tone(up ? 300 : 1400, 0.5, { vol:0.2, f2: up ? 1700 : 220 }); },
+    cheer(){ noise(1.6, { f:1100, q:0.5, vol:0.32, att:0.25 }); noise(1.4, { f:2500, q:0.6, vol:0.18, att:0.3, delay:0.1 }); },
+    pak(){ noise(0.07, { ft:'highpass', f:1500, vol:0.7 }); tone(220, 0.09, { type:'square', vol:0.15, f2:80 }); },
+    kachunk(){ tone(90, 0.15, { type:'square', vol:0.3, f2:50, lp:800 }); noise(0.08, { f:3000, vol:0.3, delay:0.08 }); tone(1200, 0.12, { vol:0.15, delay:0.12 }); tone(1600, 0.15, { vol:0.12, delay:0.2 }); },
+    scam(){ [523, 494, 466, 440, 415].forEach((f, i) => tone(f, 0.13, { type:'square', vol:0.11, delay:i * 0.1, lp:2000 })); S.bruh(); },
+    buzzOn(){
+      if (!ok() || buzz) return;
+      const o = ctx.createOscillator(), l = ctx.createOscillator(), lg = ctx.createGain(), f = ctx.createBiquadFilter(), g = ctx.createGain();
+      o.type = 'sawtooth'; o.frequency.value = 210; l.frequency.value = 13; lg.gain.value = 35;
+      f.type = 'bandpass'; f.frequency.value = 900; f.Q.value = 2; g.gain.value = 0.07;
+      l.connect(lg); lg.connect(o.frequency); o.connect(f); f.connect(g); g.connect(master); o.start(); l.start();
+      buzz = { o, l };
+    },
+    buzzOff(){ if (!buzz) return; try { buzz.o.stop(); buzz.l.stop(); } catch (e) {} buzz = null; }
   };
   // bouncy loop: kick, clap, hats, bass, little "budots-ish" blips
   const BASS = [0,null,0,null, 7,null,0,10, 0,null,0,null, 5,null,7,null, 3,null,3,null, 10,null,3,12, 5,null,5,null, 7,null,10,null];
@@ -467,6 +567,15 @@ const Snd = (function(){
   }
   function playStep(s, t){
     const d = mus.bus; if (!d) return;
+    const L = mus.layer;
+    if (s % 4 === 0 && S.onBeat) { const cb = S.onBeat; setTimeout(() => { try { cb(); } catch (e) {} }, Math.max(0, (t - ctx.currentTime) * 1000)); }
+    if (L >= 1 && s % 4 === 2) { tone(523, 0.08, { at:t, type:'square', vol:0.06, lp:3000, dest:d }); tone(659, 0.08, { at:t, type:'square', vol:0.05, lp:3000, dest:d }); }
+    if (L >= 2) { if (s % 8 === 6) tone(150, 0.14, { at:t, vol:0.7, f2:45, glide:0.1, dest:d }); if (s >= 28) noise(0.06, { at:t, f:1800, vol:0.35, dest:d }); }
+    if (L >= 3) {
+      if (s % 16 === 0) tone(880, 0.45, { at:t, type:'sawtooth', vol:0.08, f2:1320, lp:4000, dest:d });
+      if (s === 0) [415, 622].forEach(f => tone(f * 0.92, 0.25, { at:t, type:'sawtooth', vol:0.1, f2:f, glide:0.03, sus:true, lp:5000, dest:d }));
+      if (s % 2 === 0) tone(1760, 0.03, { at:t, type:'square', vol:0.03, dest:d });
+    }
     if (s % 4 === 0) tone(150, 0.16, { at:t, vol:0.9, f2:42, glide:0.12, dest:d });
     if (s % 8 === 4) { noise(0.14, { at:t, f:1600, vol:0.45, q:0.8, dest:d }); noise(0.05, { at:t + 0.012, f:2400, vol:0.25, dest:d }); }
     if (s % 2 === 1) noise(0.035, { at:t, ft:'highpass', f:7500, vol:0.16, dest:d });
@@ -479,11 +588,45 @@ const Snd = (function(){
   return S;
 })();
 
+
+/* ============ announcer voice (built-in speech, works offline) ============ */
+const Voice = (function(){
+  const ss = window.speechSynthesis, U = window.SpeechSynthesisUtterance;
+  let voice = null, busyUntil = 0, unlocked = false;
+  function pickVoice(){
+    try { const vs = ss.getVoices() || []; voice = vs.filter(v => /^fil|^tl/i.test(v.lang))[0] || vs.filter(v => /^en/i.test(v.lang))[0] || vs[0] || null; } catch (e) {}
+  }
+  if (ss) { pickVoice(); try { ss.addEventListener('voiceschanged', pickVoice); } catch (e) {} }
+  function unlock(){ if (unlocked || !ss || !U) return; unlocked = true; try { const u = new U(' '); u.volume = 0; ss.speak(u); } catch (e) {} }
+  ['pointerdown', 'touchend'].forEach(ev => document.addEventListener(ev, unlock, { passive:true }));
+  return {
+    say(txt, prio){
+      if (!ss || !U || Snd.muted || SPEED > 1.5) return;
+      try {
+        const t = now();
+        if (!prio && (ss.speaking || t < busyUntil)) return;
+        if (ss.speaking || ss.pending) ss.cancel();
+        const u = new U(txt); if (voice) u.voice = voice;
+        u.rate = 1.2; u.pitch = 1.6; u.volume = 1;
+        ss.speak(u); busyUntil = t + 900;
+      } catch (e) {}
+    },
+    stop(){ try { if (ss) ss.cancel(); } catch (e) {} }
+  };
+})();
+
 /* ============ FX: confetti, rain, popups, shake ============ */
 const FX = (function(){
   const cv = $('#fx'), cx = cv.getContext('2d');
-  let W = 0, H = 0, running = false, rain = 0;
-  const parts = [], drops = [];
+  let W = 0, H = 0, running = false, rain = 0, emoRate = 0, emoAcc = 0, emoSet = null;
+  const parts = [], drops = [], emos = [], emoCache = {};
+  const EMO_DEF = ['💸', '🔥', '💯', '✨', '🪙', '😂', '🤑'];
+  function emoImg(e){
+    if (emoCache[e]) return emoCache[e];
+    const c = document.createElement('canvas'); c.width = c.height = 64; const x = c.getContext('2d');
+    x.font = '50px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(e, 32, 36);
+    return (emoCache[e] = c);
+  }
   const COLS = ['#ff2e88', '#ffd60a', '#6bff3d', '#00c2ff', '#ff6a00', '#ffffff', '#b06bff'];
   function resize(){ const dpr = Math.min(2, window.devicePixelRatio || 1); W = innerWidth; H = innerHeight; cv.width = W * dpr; cv.height = H * dpr; cx.setTransform(dpr, 0, 0, dpr, 0, 0); }
   resize(); window.addEventListener('resize', resize);
@@ -508,7 +651,13 @@ const FX = (function(){
       for (const d of drops) { d.y += d.v * dt; d.x += d.v * 0.15 * dt; if (d.y > H) { d.y = rand(-60, -10); d.x = rand(-50, W); } cx.moveTo(d.x, d.y); cx.lineTo(d.x + d.l * 0.15, d.y + d.l); }
       cx.stroke();
     } else drops.length = 0;
-    if (parts.length || rain > 0) requestAnimationFrame(loop); else { running = false; cx.clearRect(0, 0, W, H); }
+    if (emoRate > 0) { emoAcc += emoRate * dt; while (emoAcc >= 1) { emoAcc--; emos.push({ x:rand(0, W), y:-40, vy:rand(140, 300), r:rand(-0.5, 0.5), vr:rand(-3, 3), s:rand(26, 54), e:pick(emoSet || EMO_DEF) }); } }
+    for (let i = emos.length - 1; i >= 0; i--) {
+      const m = emos[i]; m.y += m.vy * dt; m.r += m.vr * dt;
+      if (m.y > H + 60) { emos.splice(i, 1); continue; }
+      cx.save(); cx.translate(m.x, m.y); cx.rotate(m.r); cx.drawImage(emoImg(m.e), -m.s / 2, -m.s / 2, m.s, m.s); cx.restore();
+    }
+    if (parts.length || rain > 0 || emoRate > 0 || emos.length) requestAnimationFrame(loop); else { running = false; cx.clearRect(0, 0, W, H); }
   }
   return {
     confetti(x, y, n, power){
@@ -521,6 +670,8 @@ const FX = (function(){
       kick();
     },
     setRain(v){ rain = v; if (v > 0) kick(); },
+    setEmoji(rate, set){ emoRate = rate; emoSet = set || null; if (rate > 0) kick(); },
+    slam(e){ $$('.slamE').forEach(m => m.remove()); const d = document.createElement('div'); d.className = 'slamE'; d.textContent = e; $('#pops').appendChild(d); setTimeout(() => d.remove(), 760); },
     pop(x, y, txt, cls, dur){
       const d = document.createElement('div'); d.className = 'pop ' + (cls || ''); d.innerHTML = txt;
       d.style.left = x + 'px'; d.style.top = y + 'px'; $('#pops').appendChild(d);
@@ -572,9 +723,9 @@ const CUSTOMERS = [
 const COMBO_TIERS = [[3, 'SHEESH'], [5, 'LODI!'], [7, 'GRABE'], [10, 'NAKAKALOKA'], [13, 'PETMALU'], [16, 'SANA ALL'], [20, 'DIYOSA NG BENTA'], [25, 'HALIMAW!!']];
 const RANKS = [
   { min:0,    name:'Bagong Tindera',      e:'🐣', line:"Okay lang 'yan, bawi bukas! 💪" },
-  { min:300,  name:'Sakto Lang Survivor', e:'😅', line:'Hindi yayaman, pero buhay pa! 😂' },
-  { min:600,  name:'Suki Magnet',         e:'🧲', line:"Lahat ng tao, sa'yo bumibili!" },
-  { min:900,  name:'IPON QUEEN',          e:'👑', line:'Reyna ng buong barangay! 💸' }
+  { min:500,  name:'Sakto Lang Survivor', e:'😅', line:'Hindi yayaman, pero buhay pa! 😂' },
+  { min:1100, name:'Suki Magnet',         e:'🧲', line:"Lahat ng tao, sa'yo bumibili!" },
+  { min:1800, name:'IPON QUEEN',          e:'👑', line:'Reyna ng buong barangay! 💸' }
 ];
 const DAYS = 5, DAY_LEN = 60, STOCK_FULL = 100, STOCK_STEP = 25, EMERGENCY_COST = 50, START_PUHUNAN = 100, BASE_PATIENCE = 8;
 const rankOf = ipon => { let r = RANKS[0]; RANKS.forEach(x => { if (ipon >= x.min) r = x; }); return r; };
@@ -614,7 +765,7 @@ document.addEventListener('touchstart', e => { if (e.touches.length > 1) e.preve
 const muteBtn = $('#mute');
 function paintMute(){ muteBtn.innerHTML = '<span class="e">' + (Snd.muted ? '🔇' : '🔊') + '</span>'; }
 paintMute();
-muteBtn.addEventListener('click', () => { Snd.init(); Snd.setMuted(!Snd.muted); paintMute(); if (!Snd.muted) Snd.pop(); });
+muteBtn.addEventListener('click', () => { Snd.init(); Snd.setMuted(!Snd.muted); paintMute(); if (Snd.muted) Voice.stop(); else Snd.pop(); });
 
 /* ============ TITLE ============ */
 function renderTitle(){
@@ -623,10 +774,11 @@ function renderTitle(){
     const cols = ['#ffd60a', '#6bff3d', '#00c2ff', '#ff6a00', '#ffffff', '#ff8ad8'];
     return '<span style="color:' + cols[(i + off) % cols.length] + ';animation-delay:' + (-(i + off) * 0.12) + 's">' + c + '</span>';
   }).join('') + '</span>';
-  const floats = [['🥚', 4, 10], ['🍌', 87, 16], ['💸', 3, 78], ['🥭', 89, 80], ['🪙', 5, 44], ['🍜', 90, 46]]
+  const floats = [['🥚', 4, 10], ['🍌', 87, 16], ['💸', 3, 78], ['🥭', 89, 80], ['🪙', 5, 44], ['🍜', 90, 46], ['🔥', 14, 92], ['🪰', 80, 92], ['🤑', 18, 4], ['📢', 72, 4]]
     .map((f, i) => '<div class="floaty e" style="left:' + f[1] + '%;top:' + f[2] + '%;animation-delay:' + (-i * 0.5) + 's">' + f[0] + '</div>').join('');
   $('#title').innerHTML = floats +
     '<div class="logo">' + word('TINDAHAN', 0) + word('RUSH', 3) + '</div>' +
+    '<div class="chaos">⚠️ CHAOS EDITION ⚠️</div>' +
     '<div class="vs"><span class="e">🏪</span>Kriste <b>VS</b> Helen<span class="e">🍉</span></div>' +
     '<div class="row">' +
       '<button class="btn big wig" data-a="one" style="--bg:var(--orange)">▶ 1 PLAYER</button>' +
@@ -646,7 +798,7 @@ function withTutorial(next){
   tutIdx = 0; G.pendingAfterTut = next; renderTut();
 }
 
-/* ============ TUTORIAL (3 cards) ============ */
+/* ============ TUTORIAL (4 cards) ============ */
 let tutIdx = 0;
 const TUT = [
   { pic:'<div class="stackc"><div class="mini-bub e">🥚</div><div class="e">🧒</div></div><div class="arrow">➜</div>' +
@@ -659,7 +811,10 @@ const TUT = [
     txt:'Mura = dami tao. Mahal = laki kita.' },
   { pic:'<div class="stackc" style="position:relative"><div class="e" style="font-size:.8em">🪙</div><div class="dragdemo e" style="--dx:calc(var(--u)*20);--dy:calc(var(--u)*-1)">🪙</div></div>' +
          '<div class="arrow">➜</div><div class="e" style="font-size:.7em;opacity:.6">📦</div><div class="e" style="font-size:1.1em">🐷<span style="font-size:.45em">👑</span></div><div class="e" style="font-size:.7em;opacity:.6">☂️</div>',
-    txt:'I-drag ang kita sa garapon. 🐷 IPON = score!' }
+    txt:'I-drag ang kita sa garapon. 🐷 IPON = score!' },
+  { pic:'<div class="tile e" style="background:#ff3b5c;font-size:.7em;color:#fff">📦<span style="font-size:.45em;font-family:var(--font);font-weight:900">x5</span><div class="hand e" style="left:40%;top:50%">👆</div></div>' +
+         '<div class="e" style="font-size:.7em">💵🤔</div><div class="e" style="font-size:.7em">🪰</div><div class="e" style="font-size:.7em">🤡✖️</div><div class="e" style="font-size:.8em">🔥</div>',
+    txt:'UBOS? Tap 5x! Sukli? Piliin! Langaw? PAK! Ads? ✖! 🔥 = DOBLE!' }
 ];
 function renderTut(){
   const c = TUT[tutIdx], last = tutIdx === TUT.length - 1;
@@ -688,8 +843,10 @@ ACT.pickstall = b => { setupGame([b.getAttribute('data-s')]); Snd.fanfare(1); re
 
 function setupGame(ids){
   G.players = ids.map(newPlayer); G.pi = 0;
-  const ev = shuffle(['ulan', 'lipat', 'suki', null]);
-  G.events = [null].concat(ev);   // day 1 calm; days 2-5 get each event once (same for both players)
+  // day 1 calm; then 1, 2, 2, 2 events. Same schedule for both players.
+  const ev = shuffle(['ulan', 'lipat', 'suki', 'brownout', 'langaw', 'fiesta']);
+  const extra = pick(['ulan', 'lipat', 'brownout', 'langaw', 'fiesta'].filter(e => e !== ev[5]));
+  G.events = [[], [ev[0]], [ev[1], ev[2]], [ev[3], ev[4]], [ev[5], extra]];
 }
 
 /* ============ HANDOFF (2P) ============ */
@@ -725,7 +882,7 @@ function renderPrice(){
   const chips = [];
   chips.push(p.stock >= 4 ? '<span class="chip good">📦 Stock: PUNO ✅</span>'
     : '<span class="chip bad">📦 Stock ' + p.stock + '/4 — kulang puhunan! 😬' + (p.stockFree ? ' (utang kay Nanay)' : '') + '</span>');
-  chips.push(p.emergency >= EMERGENCY_COST ? '<span class="chip good">☂️ Emergency: READY</span>' : '<span class="chip">☂️ Emergency: wala</span>');
+  chips.push(p.emergency >= EMERGENCY_COST ? '<span class="chip good">☂️ Emergency: ligtas x' + Math.floor(p.emergency / EMERGENCY_COST) + '</span>' : '<span class="chip">☂️ Emergency: wala</span>');
   chips.push('<span class="chip">🐷 Ipon: ' + peso(p.ipon) + '</span>');
   const pbtn = k => { const pr = PRICES[k];
     return '<button class="btn pbtn wig ' + (p.price === k ? 'sel' : '') + '" data-a="setprice" data-v="' + k + '" style="--bg:' + pr.col + '">' +
@@ -751,12 +908,37 @@ ACT.setprice = b => {
 };
 ACT.go = () => startDay();
 
-/* ============ RUSH ============ */
+/* ============ RUSH (chaos edition) ============ */
+const SHELF_UNITS = 6, RESTOCK_TAPS = 5, HYPER_LEN = 8;
+const BOSS = { f:'👸', n:'Ninang Galante', l:'Lahat ng ito, anak! 💅', p:2.6, boss:true };
+const EVN = { ulan:['🌧️', 'ULAN'], lipat:['🚚', 'LIPAT PWESTO'], suki:['⭐', 'SUKI DAY'], brownout:['⚡', 'BROWNOUT'], langaw:['🪰', 'LANGAW'], fiesta:['🎉', 'FIESTA'] };
+const CHAT = {
+  base:['HAHAHA', 'first! 🙋', 'pa-shout out po 🙏', 'sana all may tindahan', 'mine 🛒', 'mine po 2pcs', 'lodi!!', 'ayan na ayan na', 'go go go 🔥', 'legit seller po?', 'HAHAHAHA',
+    '💸💸💸', 'omg', 'grabe ang pila', 'skl bumili ako kahapon', 'san po location', '👀👀', 'ok', 'sheeesh', 'mars ang ganda ng paninda', 'pa-reserve po', 'hm po?', '🤣🤣🤣'],
+  combo:['SHEESH 🔥🔥', 'ANG BILIS!!', 'HALIMAW 😱', 'NAKAKALOKA', 'PETMALUUU', 'idol!!', '🔥🔥🔥🔥', 'speed run yarn?', 'NAGBABAGA', 'tindera of the year 🏆'],
+  sad:['awit 😭', 'sayang', 'F', 'ayun lumayas', 'RIP customer', '😩😩'],
+  ad:['scam yan teh', 'wag pindutin!!', 'haha na-scam', 'report ko yan', '🤡🤡'],
+  dark:['BROWNOUT 😱', 'asan ka na teh', '👻👻', 'kandila po meron?'], fly:['ew langaw', 'PAK PAK PAK', '🪰🪰🪰', 'kadiri teh'], rain:['ulan na naman', 'baha na dito 🌊', '☔☔'],
+  hyper:['HYPEEERRR', 'AAAAAAA', '🔥🔥🔥🔥🔥', 'DOBLE DOBLE', 'WALANG TULUGAN']
+};
+const ADS = [
+  ['📱', 'NANALO KA NG CELLPHONE!!!', '(hindi) i-tap dito'], ['🐓', 'MANOK NA MARUNONG MAG-SAYAW', '₱999 lang! Limited!'],
+  ['🌕', 'LOTE SA BUWAN', '₱1 down payment!!'], ['🧙', 'HULA NI MANANG', 'Yayaman ka bukas (siguro)'],
+  ['💊', 'VITAMINS PARA SA TINDERA', '99% effective (daw)'], ['💅', 'LIBRENG PEDICURE', 'Kapag bumili ng 1000 itlog'],
+  ['🎰', 'PISO = MILYON?!', "Tap mo lang 'to, promise"], ['🦄', 'UNICORN FOR SALE', 'Totoo, pramis']
+];
+const BOMBS = [['rooster', 'TIKTILAOOOK! 🐓'], ['jeep', 'BEEP BEEP! 🚙'], ['bell', 'KLING KLING! 🍦'], ['slide', 'WHEEEE ⤴️'], ['bruh', 'bruh. 🗿'], ['siren', 'WEE-WOO 🚨']];
+
 function startDay(){
-  const p = cur(), s = p.stall, ev = G.events[p.day - 1];
-  R = { p, s, t:0, len:DAY_LEN, spawnT:0.6, custs:[], slots:[null, null, null, null], kita:0, sales:0, lost:0, ubos:0, tita:0,
-    combo:0, bestCombo:0, lastSale:-99, frozen:0, paused:false, done:false, ev, evAt: ev === 'ulan' ? rand(10, 17) : ev === 'lipat' ? rand(22, 32) : 0.5,
-    evFired:false, rainMul:1, saved:null, nid:0, hintOn: p.day === 1, forcedNormal: p.day === 1 ? 2 : 0, last:now(), lateWarn:false };
+  const p = cur(), s = p.stall, evs = G.events[p.day - 1] || [];
+  const adv = p.day >= 2, slotT = [rand(9, 17), rand(31, 40)]; let k = 0;
+  R = { p, s, adv, t:0, len:DAY_LEN, spawnT:0.6, custs:[], slots:[null, null, null, null], kita:0, sales:0, lost:0, ubos:0, tita:0,
+    combo:0, bestCombo:0, lastSale:-99, frozen:0, paused:false, done:false,
+    evs:evs.map(e => ({ ev:e, at: e === 'suki' ? 0.5 : slotT[k++], fired:false })), evLog:[], suki: evs.indexOf('suki') >= 0,
+    rainMul:1, nid:0, hintOn: p.day === 1, forcedNormal: p.day === 1 ? 2 : 0, last:now(), lateWarn:false,
+    units:s.items.map((_, i) => i < p.stock ? SHELF_UNITS : 0), rs:[0, 0, 0, 0], hype:0, hyperT:0, fiestaT:0, darkT:0,
+    ads:[], adT:rand(5, 9), sukli:null, flies:[], flyT:0, boss: adv ? { at:rand(16, 32), done:false } : null,
+    chatT:0.4, bombT:rand(3, 6), viewers:100 + Math.floor(rand(0, 90)), vT:0, scams:0, sukliOk:0, swats:0, bossServed:0 };
   $('#rush').className = 'screen';
   $('#rush').innerHTML =
     '<div class="hud">' +
@@ -767,22 +949,31 @@ function startDay(){
       '<div class="money" id="hudMoney">₱0</div>' +
     '</div>' +
     '<div class="stage" id="stage">' +
-      '<div class="awning" style="--a1:' + s.awning + '"><div class="sign">' + s.icon + ' ' + s.name.toUpperCase() + '</div></div>' +
+      '<div class="awning" style="--a1:' + s.awning + '"><div class="chatlane" id="chat"></div>' +
+        '<div class="sign">' + s.icon + ' ' + s.name.toUpperCase() + '</div>' +
+        '<div class="live"><span class="dot"></span>LIVE <span class="e">👁</span><b id="viewers">0</b></div></div>' +
       '<div class="street" id="street">' + [0, 1, 2, 3].map(i => '<div class="slot" data-slot="' + i + '"></div>').join('') + '</div>' +
       '<div class="counter" id="counter">' + s.items.map((it, i) =>
-        '<button class="item ' + (i >= p.stock ? 'dead' : '') + '" data-i="' + i + '"><span class="e">' + it.e + '</span><span class="n">' + it.n + '</span>' +
-        '<span class="p">₱' + priceOf(it, p.price) + '</span>' + (i >= p.stock ? '<div class="ubos"><b>UBOS</b></div>' : '') + '</button>').join('') +
+        '<button class="item ' + (i >= p.stock ? 'dead' : '') + '" data-i="' + i + '">' + (i < p.stock ? '<span class="cnt">x' + SHELF_UNITS + '</span>' : '') +
+        '<span class="e">' + it.e + '</span><span class="n">' + it.n + '</span><span class="p">₱' + priceOf(it, p.price) + '</span>' +
+        (i >= p.stock ? '<div class="ubos"><b>WALANG<br>PUHUNAN</b></div>' : '<div class="rs"><b>UBOS!</b><span>TAP 5x 📦</span><i></i></div>') + '</button>').join('') +
+        '<button class="hype" id="hype"><div class="hf"></div><span class="e">🔥</span><b>HYPE</b></button>' +
       '</div>' +
     '</div>' +
-    '<div class="tint"></div>' +
+    '<div class="tint"></div><div class="dark" id="dark"></div><div id="layer"></div>' +
     '<div class="overlay" id="pauseOv"><div class="ttl">PAHINGA MUNA ☕</div>' +
       '<div class="row"><button class="btn big wig" data-a="resume" style="--bg:var(--green)">TULOY! ▶</button>' +
       '<button class="btn" data-a="home" style="--bg:#8a8a9a">🏠 UWI NA</button></div></div>';
   show('rush');
   $('#counter').addEventListener('pointerdown', onItem);
   $('#street').addEventListener('pointerdown', onCust);
-  Snd.init(); Snd.musicStart(PRICES[p.price].bpm); Snd.airhorn();
+  $('#rush').addEventListener('pointerdown', e => setSpot(e.clientX, e.clientY), true);
+  Snd.init(); Snd.musicStart(PRICES[p.price].bpm); Snd.musicLayer(0); Snd.airhorn();
+  Snd.onBeat = beatThump;
+  FX.setEmoji(1.2);
+  Voice.say('Araw ' + p.day + '! Bukas na ang tindahan!', true);
   FX.banner('ARAW ' + p.day + '! <span class="e">🔔</span><small>BUKAS NA ANG TINDAHAN!</small>', s.color, 1.5);
+  paintHype();
   const my = R; requestAnimationFrame(ts => { my.last = ts; requestAnimationFrame(frame.bind(null, my)); });
 }
 function frame(my, ts){
@@ -792,63 +983,136 @@ function frame(my, ts){
   requestAnimationFrame(frame.bind(null, my));
 }
 function tick(dt){
-  // patience keeps moving only when not frozen
   if (R.frozen > 0) { R.frozen -= dt; return; }
   R.t += dt;
-  // events
-  if (R.ev && !R.evFired && R.t >= R.evAt) { R.evFired = true; fireEvent(R.ev); if (R.done) return; }
-  // spawn
-  R.spawnT -= dt;
+  const rush = $('#rush');
+  for (const e of R.evs) if (!e.fired && R.t >= e.at) { e.fired = true; fireEvent(e.ev); if (R.done) return; }
+  if (R.boss && !R.boss.done && R.t >= R.boss.at && R.t < R.len - 12) {
+    const free = R.slots.indexOf(null); if (free >= 0) { R.boss.done = true; spawn(free, true); bossIntro(); }
+  }
+  // spawn (fiesta + hyper make it faster)
+  R.spawnT -= dt * (R.fiestaT > 0 ? 2 : 1) * (R.hyperT > 0 ? 1.8 : 1);
   if (R.spawnT <= 0 && R.t < R.len - 2.5) {
     const free = R.slots.indexOf(null);
     if (free >= 0) { spawn(free); R.spawnT = PRICES[R.p.price].every * rand(0.7, 1.3) * R.rainMul; }
     else R.spawnT = 0.3;
   }
-  // customers
+  // customers (flies make everyone impatient)
+  const drain = R.flies.length ? 1.6 : 1;
   for (const c of R.custs.slice()) {
-    if (c.gone) continue;
-    c.pat -= dt;
+    if (c.gone || c.paying) continue;
+    c.pat -= dt * drain;
     const f = Math.max(0, c.pat / c.max);
     c.bar.style.transform = 'scaleX(' + f + ')';
     c.bar.style.background = f > 0.5 ? 'var(--lime)' : f > 0.25 ? 'var(--yellow)' : 'var(--red)';
     if (c.ubos && c.max - c.pat > 1.8) { leave(c, 'ubos'); continue; }
     if (c.pat <= 0) leave(c, c.tita ? 'tita' : 'lost');
   }
+  // hype / hyper
+  if (R.hyperT > 0) { R.hyperT -= dt; if (R.hyperT <= 0) endHyper(); paintHype(); }
+  else if (R.hype > 0 && R.hype < 100) { R.hype = Math.max(0, R.hype - 2.5 * dt); paintHype(); }
+  // timed events
+  if (R.fiestaT > 0) { R.fiestaT -= dt; if (R.fiestaT <= 0) { FX.pop(innerWidth / 2, innerHeight * 0.3, 'Tapos na ang fiesta 🥲', 'small'); } }
+  if (R.darkT > 0) {
+    R.darkT -= dt;
+    if (R.darkT <= 0) { rush.classList.remove('brownout'); Snd.musicMuffle(rush.classList.contains('raining')); Snd.pop(); FX.pop(innerWidth / 2, innerHeight * 0.35, 'MAY KURYENTE NA! 💡', ''); Voice.say('May kuryente na!'); }
+  }
+  if (R.flies.length) updateFlies(dt);
+  // ads
+  if (R.adv) {
+    R.adT -= dt;
+    if (R.adT <= 0) { if (R.ads.length < (R.p.day >= 4 ? 2 : 1) && R.t < R.len - 4) spawnAd(); R.adT = rand(7, 13); }
+    for (const a of R.ads.slice()) { a.t -= dt; if (a.t <= 0) closeAd(a, true); }
+  }
+  // sukli countdown
+  if (R.sukli) { R.sukli.t -= dt; R.sukli.bar.style.transform = 'scaleX(' + Math.max(0, R.sukli.t / R.sukli.max) + ')'; if (R.sukli.t <= 0) endSukli('slow'); }
+  // livestream chat, sound bombs, viewers
+  R.chatT -= dt;
+  if (R.chatT <= 0) {
+    const pool = R.darkT > 0 ? CHAT.dark : R.flies.length ? CHAT.fly : R.hyperT > 0 ? CHAT.hyper : R.combo >= 5 ? CHAT.combo : rush.classList.contains('raining') && Math.random() < 0.5 ? CHAT.rain : CHAT.base;
+    chat(pick(pool)); R.chatT = rand(0.7, 1.6) / (R.combo >= 5 || R.hyperT > 0 ? 2 : 1);
+  }
+  R.bombT -= dt;
+  if (R.bombT <= 0) {
+    const b = pick(BOMBS); Snd[b[0]]();
+    const st = $('#street').getBoundingClientRect();
+    FX.pop(rand(st.left + 80, st.right - 80), rand(st.top + 30, st.top + st.height * 0.5), b[1], 'small');
+    R.bombT = rand(4, 9);
+  }
+  R.vT -= dt;
+  if (R.vT <= 0) { R.viewers += Math.floor(rand(-3, 9) + R.combo * 2); R.vT = 0.5; const v = $('#viewers'); if (v) v.textContent = R.viewers.toLocaleString('en-US'); }
   // combo cooldown
-  if (R.combo > 0 && R.t - R.lastSale > 3.5) { R.combo = 0; paintCombo(); }
-  // sun
+  if (R.combo > 0 && R.t - R.lastSale > 3.5) breakCombo();
+  // sun, end-of-day rush, music tempo, emoji rain
   const prog = Math.min(1, R.t / R.len);
   const sun = $('#rush .sun'); if (sun) sun.style.left = (prog * 100) + '%';
-  if (!R.lateWarn && R.len - R.t < 8) { R.lateWarn = true; const sk = $('#rush .sky'); if (sk) sk.classList.add('late'); FX.pop(innerWidth / 2, innerHeight * 0.3, 'MAGSASARA NA! 🌙', 'small'); }
+  const late = R.len - R.t < 10;
+  if (!R.lateWarn && late) { R.lateWarn = true; const sk = $('#rush .sky'); if (sk) sk.classList.add('late'); FX.pop(innerWidth / 2, innerHeight * 0.3, 'MAGSASARA NA! 🌙 BILIS!', ''); Voice.say('Magsasara na! Bilis!', true); Snd.siren(); }
+  Snd.musicTempo(PRICES[R.p.price].bpm + (late ? 16 : 0) + (R.fiestaT > 0 ? 18 : 0) + (R.hyperT > 0 ? 24 : 0));
+  FX.setEmoji(R.hyperT > 0 ? 14 : R.fiestaT > 0 ? 9 : R.combo >= 10 ? 6 : 1.2, R.fiestaT > 0 ? ['🎉', '🎊', '🥳', '🍗'] : null);
   if (R.t >= R.len) endDay();
 }
-function spawn(slot){
-  const p = R.p;
-  let pool = CUSTOMERS;
-  if (R.forcedNormal > 0 || R.custs.some(c => c.tita && !c.gone)) pool = CUSTOMERS.filter(c => !c.tita);
-  // weighted pick
-  const tot = pool.reduce((a, c) => a + (c.w || 1), 0); let r = Math.random() * tot, type = pool[0];
-  for (const c of pool) { r -= (c.w || 1); if (r <= 0) { type = c; break; } }
-  let want = Math.floor(Math.random() * 4);
-  if (R.forcedNormal > 0) { want = Math.floor(Math.random() * p.stock); R.forcedNormal--; }
-  const suki = R.ev === 'suki' && !type.tita && Math.random() < 0.38;
-  const ubos = !type.tita && want >= p.stock;
-  const max = BASE_PATIENCE * type.p * (ubos ? 1 : 1);
-  const c = { id:++R.nid, type, want, suki, ubos, tita:!!type.tita, max, pat:max, slot, gone:false };
+function beatThump(){
+  if (!R || R.done || R.paused) return;
+  const st = $('#street'); if (!st) return;
+  st.classList.add('thump'); setTimeout(() => st.classList.remove('thump'), 90);
+}
+const CHAT_SPEED = 230; // px per second
+function chat(txt){
+  const lane = $('#chat'); if (!lane) return;
+  R.lanes = R.lanes || [0, 0];
+  const t = now(), li = R.lanes[0] <= R.lanes[1] ? 0 : 1;
+  if (R.lanes[li] > t) return;   // both lanes busy: drop it
+  const d = document.createElement('span'); d.className = 'cm';
+  d.style.top = li ? '74%' : '28%';
+  d.style.color = pick(['#fff', '#fff', '#ffd60a', '#6bff3d', '#7df9ff']);
+  d.textContent = pick(['juan', 'mars', 'ate_g', 'kuya_b', 'tita_l', 'beshy', 'lodi99', 'xX_bebe_Xx', 'manang']) + ': ' + txt;
+  lane.appendChild(d);
+  const w = d.offsetWidth, dur = (innerWidth + w) / CHAT_SPEED;
+  d.style.animationDuration = dur + 's';
+  R.lanes[li] = t + (w + 40) / CHAT_SPEED * 1000;
+  setTimeout(() => d.remove(), dur * 1000 + 100);
+}
+function spawn(slot, boss){
+  const p = R.p, s = R.s;
+  let type;
+  if (boss) type = BOSS;
+  else {
+    let pool = CUSTOMERS;
+    if (R.forcedNormal > 0 || R.custs.some(c => c.tita && !c.gone)) pool = CUSTOMERS.filter(c => !c.tita);
+    const tot = pool.reduce((a, c) => a + (c.w || 1), 0); let r = Math.random() * tot; type = pool[0];
+    for (const c of pool) { r -= (c.w || 1); if (r <= 0) { type = c; break; } }
+  }
+  let n = 1;
+  if (boss) n = 5;
+  else if (!type.tita && R.forcedNormal <= 0) { const r2 = Math.random(); n = Math.min(r2 < 0.5 ? 1 : r2 < 0.82 ? 2 : 3, p.day === 1 ? 2 : 3); }
+  const range = boss || R.forcedNormal > 0 ? p.stock : 4;
+  const order = []; for (let k = 0; k < n; k++) order.push(Math.floor(Math.random() * range));
+  if (R.forcedNormal > 0) R.forcedNormal--;
+  const suki = R.suki && !type.tita && !boss && Math.random() < 0.38;
+  const ubos = !type.tita && order.some(i => i >= p.stock);
+  const max = BASE_PATIENCE * type.p * (1 + 0.45 * (n - 1));
+  const c = { id:++R.nid, type, order, got:order.map(() => false), suki, ubos, tita:!!type.tita, boss:!!boss, max, pat:max, slot, gone:false, paying:false };
   const el = document.createElement('div');
-  el.className = 'cust' + (suki ? ' suki' : '');
+  el.className = 'cust' + (suki ? ' suki' : '') + (boss ? ' boss' : '');
   el.innerHTML =
-    '<div class="bubble"><div class="want e">' + p.stall.items[want].e +
-      (suki ? '<span class="x2">x2</span>' : '') + (c.tita ? '<span class="q">?</span>' : '') + (ubos ? '<span class="no">❌</span>' : '') + '</div>' +
-      '<div class="line">' + (ubos ? 'Wala? UBOS?! 😭' : suki ? 'SUKI mo ako! Dalawa!' : type.l) + '</div></div>' +
+    '<div class="bubble">' +
+      (suki ? '<span class="bmark x2">x2</span>' : '') + (c.tita ? '<span class="bmark q">?</span>' : '') + (ubos ? '<span class="bmark no e">❌</span>' : '') +
+      '<div class="want e n' + n + '">' + order.map((it, k) => '<span class="wi" data-k="' + k + '">' + s.items[it].e + '</span>').join('') + '</div>' +
+      '<div class="line">' + (ubos ? 'Wala? UBOS?! 😭' : suki ? 'SUKI mo ako! Doble!' : type.l) + '</div></div>' +
     '<div class="face e">' + type.f + '</div>' +
     '<div class="pat"><i></i></div>' +
-    '<div class="ntag">' + (suki ? '⭐ ' : '') + type.n + '</div>';
+    '<div class="ntag">' + (suki ? '⭐ ' : boss ? '👑 ' : '') + type.n + '</div>';
   c.el = el; c.bar = $('.pat i', el);
   R.slots[slot] = c; R.custs.push(c);
   $('#street [data-slot="' + slot + '"]').appendChild(el);
   Snd.pop();
-  if (R.hintOn && !c.tita && !c.ubos) showHint(want);
+  if (R.hintOn && !c.tita && !c.ubos) showHint(order[0]);
+}
+function bossIntro(){
+  Snd.airhorn(); Snd.siren(); FX.shake(3); FX.shower(90);
+  FX.banner('👸 BOSS CUSTOMER! 👸<small>5 items! Doble kita + ₱50!</small>', '#ffb000', 2.2);
+  Voice.say('Boss customer! Si Ninang!', true); chat('NINANG IS HERE 👸👸');
 }
 function showHint(i){
   if ($('#rush .hint')) return;
@@ -857,17 +1121,40 @@ function showHint(i){
   h.style.left = '58%'; h.style.top = '45%'; it.appendChild(h);
 }
 function clearHint(){ R.hintOn = false; $$('#rush .hint').forEach(h => h.remove()); }
+function paintItem(i){
+  const b = $('#counter [data-i="' + i + '"]'); if (!b || i >= R.p.stock) return;
+  const u = R.units[i];
+  b.classList.toggle('empty', u <= 0);
+  const c = $('.cnt', b); c.textContent = 'x' + u; c.classList.toggle('low', u > 0 && u <= 2);
+  $('.rs i', b).style.setProperty('--p', (R.rs[i] / RESTOCK_TAPS * 100) + '%');
+}
+function paintMoney(){
+  const m = $('#hudMoney'); if (!m || !R) return;
+  m.textContent = peso(R.kita); m.classList.remove('bump'); void m.offsetWidth; m.classList.add('bump');
+}
 
 function onItem(e){
-  const b = e.target.closest('.item'); if (!b || !R || R.done || R.paused || R.frozen > 0) return;
+  if (!R || R.done || R.paused || R.frozen > 0) return;
+  if (e.target.closest('#hype')) { e.preventDefault(); goHyper(); return; }
+  const b = e.target.closest('.item'); if (!b) return;
   e.preventDefault();
   const i = +b.getAttribute('data-i');
-  b.classList.add('hit'); setTimeout(() => b.classList.remove('hit'), 110);
-  if (i >= R.p.stock) { noGood(b, 'UBOS NA! 😅'); return; }
-  const c = R.custs.filter(x => !x.gone && x.want === i).sort((a, b2) => a.id - b2.id)[0];
-  if (!c) { noGood(b, 'Walang bibili niyan! 🤷'); breakCombo(); return; }
+  b.classList.remove('hit'); void b.offsetWidth; b.classList.add('hit'); setTimeout(() => b.classList.remove('hit'), 110);
+  if (i >= R.p.stock) { noGood(b, 'WALANG PUHUNAN! 😅'); Snd.bonk(); return; }
+  if (R.units[i] <= 0) { restockTap(i, b); return; }
+  const c = R.custs.filter(x => !x.gone && !x.paying && x.order.some((it, k) => it === i && !x.got[k])).sort((a, b2) => a.id - b2.id)[0];
+  if (!c) { noGood(b, 'Walang bibili niyan! 🤨'); Snd.vineBoom(); FX.slam('🤨'); FX.shake(2); breakCombo(); chat('bruh 🤨'); return; }
   if (c.tita) { titaMoment(c); return; }
-  sell(c, b);
+  give(c, i);
+}
+function restockTap(i, b){
+  R.rs[i]++; Snd.tick(R.rs[i] * 4);
+  const pt = FX.center(b); FX.pop(pt.x, pt.y - 40, '📦 ' + R.rs[i] + '/' + RESTOCK_TAPS, 'small');
+  if (R.rs[i] >= RESTOCK_TAPS) {
+    R.rs[i] = 0; R.units[i] = SHELF_UNITS; Snd.kachunk();
+    FX.pop(pt.x, pt.y - 90, 'RESTOCK! 💪', ''); chat('PUNO ULIT 📦');
+  }
+  paintItem(i);
 }
 function onCust(e){
   const el = e.target.closest('.cust'); if (!el || !R || R.done || R.paused || R.frozen > 0) return;
@@ -879,39 +1166,168 @@ function onCust(e){
 }
 function noGood(b, txt){
   b.classList.remove('no'); void b.offsetWidth; b.classList.add('no');
-  Snd.bonk(); const pt = FX.center(b); FX.pop(pt.x, pt.y - 40, txt, 'small');
+  const pt = FX.center(b); FX.pop(pt.x, pt.y - 40, txt, 'small');
 }
 function titaMoment(c){
   R.tita++;
-  Snd.huh();
+  Snd.vineBoom(); FX.slam('🗿');
   const pt = FX.center($('.face', c.el));
   FX.pop(pt.x, pt.y - 40, 'Tinanong ko lang naman! 😅', 'say');
   FX.pop(innerWidth / 2, innerHeight * 0.32, '⏳ -3s TITA MOMENT', '');
+  Voice.say('Tita moment!'); chat('HAHAHA si tita 🗿');
   R.t = Math.min(R.len, R.t + 3);
   leave(c, 'titaok');
 }
-function sell(c, btn){
-  const it = R.s.items[c.want];
-  const qty = c.suki ? 2 : 1;
+function give(c, i){
+  const k = c.order.findIndex((it, kk) => it === i && !c.got[kk]);
+  c.got[k] = true;
+  const wi = $('.wi[data-k="' + k + '"]', c.el); if (wi) wi.classList.add('got');
+  R.units[i] = Math.max(0, R.units[i] - (c.suki ? 2 : 1));
+  paintItem(i);
   const fast = R.t - R.lastSale <= 3.5;
   R.combo = fast || R.combo === 0 ? R.combo + 1 : 1;
-  R.lastSale = R.t;
-  const tip = Math.floor(Math.min(R.combo, 12) / 2);
-  const gain = (priceOf(it, R.p.price) - it.c) * qty + tip;
-  R.kita += gain; R.sales += qty;
-  R.bestCombo = Math.max(R.bestCombo, R.combo);
+  R.lastSale = R.t; R.bestCombo = Math.max(R.bestCombo, R.combo);
+  addHype(5 + Math.min(R.combo, 12) * 0.7);
   clearHint();
+  if (c.got.every(Boolean)) completeSale(c);
+  else { Snd.chaching(R.combo); const pt = FX.center(wi || c.el); FX.pop(pt.x, pt.y - 30, '✔', 'cash'); }
+  comboFx();
+}
+function completeSale(c){
+  const qty = c.suki ? 2 : 1;
+  let base = 0, price = 0;
+  c.order.forEach(i => { const it = R.s.items[i], pr = priceOf(it, R.p.price); base += (pr - it.c) * qty; price += pr * qty; });
+  let gain = base + Math.floor(Math.min(R.combo, 12) / 2);
+  if (c.boss) gain = gain * 2 + 50;
+  if (R.hyperT > 0) gain *= 2;
+  R.sales += c.order.length * qty;
+  if (R.adv && !c.boss && !R.sukli && Math.random() < 0.25) { startSukli(c, gain, price); return; }
+  payout(c, gain);
+}
+function payout(c, gain, label){
+  R.kita += gain;
   const pt = FX.center($('.face', c.el));
   FX.pop(pt.x, pt.y - 20, '+₱' + gain, 'cash');
-  if (R.sales === 1 || Math.random() < 0.25) FX.pop(pt.x, pt.y - 90, pick(['BENTA!', 'SOLD!', 'SALAMAT PO!', 'YARN!', 'CHA-CHING!']), 'small');
+  if (label) FX.pop(pt.x, pt.y - 90, label, 'small');
+  else if (Math.random() < 0.3) FX.pop(pt.x, pt.y - 90, pick(['BENTA!', 'SOLD!', 'SALAMAT PO!', 'YARN!', 'CHA-CHING!', 'SHEEESH']), 'small');
   if (c.suki) FX.pop(pt.x, pt.y + 40, '⭐ SUKI x2!', 'small');
+  if (c.boss) {
+    R.bossServed++; Snd.airhorn(); FX.confetti(pt.x, pt.y, 120, 1.2); FX.shake(3);
+    Voice.say('Salamat, Ninang!', true); FX.banner('👸 BOSS DONE! +₱' + gain, '#ffb000', 1.6);
+  } else if (Math.random() < 0.15) Voice.say(pick(['Benta!', 'Cha-ching!', 'Sold!', 'Yarn!', 'Salamat po!']));
   Snd.chaching(R.combo);
-  flyCoin(pt, () => {
-    const m = $('#hudMoney'); if (!m) return;
-    m.textContent = peso(R.kita); m.classList.remove('bump'); void m.offsetWidth; m.classList.add('bump');
-  });
+  R.viewers += 15 + R.combo * 4;
+  flyCoin(pt, paintMoney);
   leave(c, 'sold');
-  comboFx();
+}
+function startSukli(c, gain, price){
+  c.paying = true;
+  const bills = [20, 50, 100, 200, 500, 1000].filter(b => b > price);
+  const bill = bills.length ? bills[Math.min(bills.length - 1, Math.floor(Math.random() * 2))] : price;
+  const right = bill - price, opts = [right];
+  shuffle([-20, -10, -5, -2, 2, 5, 10, 20]).forEach(d => { if (opts.length < 3 && right + d >= 0 && opts.indexOf(right + d) < 0) opts.push(right + d); });
+  while (opts.length < 3) opts.push(right + 15 * opts.length);
+  const el = document.createElement('div'); el.className = 'sukli';
+  el.innerHTML =
+    '<div class="sq"><span class="e">' + c.type.f + '💵</span> Bayad: <b>₱' + bill + '</b> &nbsp; Presyo: <b>₱' + price + '</b></div>' +
+    '<div class="sq2">SUKLI? <span class="e">🤔</span></div>' +
+    '<div class="sopts">' + shuffle(opts).map(v => '<button class="btn sbtn" ' + (v === right ? 'data-ok="1"' : '') + '>₱' + v + '</button>').join('') + '</div>' +
+    '<div class="stime"><i></i></div>';
+  $('#layer').appendChild(el);
+  R.sukli = { c, gain, el, t:7, max:7, bar:$('.stime i', el) };
+  el.addEventListener('pointerdown', ev => {
+    ev.stopPropagation();
+    const b = ev.target.closest('.sbtn'); if (!b || !R || R.paused || R.done) return;
+    ev.preventDefault(); endSukli(b.hasAttribute('data-ok') ? 'ok' : 'bad');
+  });
+  Snd.bell(); Voice.say('Sukli!', true);
+}
+function endSukli(res){
+  const S = R.sukli; if (!S) return;
+  R.sukli = null; S.el.remove(); S.c.paying = false;
+  if (S.c.gone) return;
+  if (res === 'ok') { R.sukliOk++; Snd.fanfare(1); Voice.say('Tama!'); payout(S.c, S.gain + 5, 'TAMA ANG SUKLI! 🧠 +₱5'); }
+  else if (res === 'bad') {
+    R.scams++; Snd.scam(); FX.slam('😭'); FX.shake(2); Voice.say('Na-scam ka!', true); breakCombo(); chat(pick(CHAT.ad));
+    payout(S.c, 0, 'MALI! NA-SCAM KA 😭');
+  } else payout(S.c, S.gain, 'Ang tagal! 😤');
+}
+function spawnAd(){
+  const a = pick(ADS), st = $('#street').getBoundingClientRect();
+  const el = document.createElement('div'); el.className = 'ad';
+  el.innerHTML = '<div class="adt">AD</div><div class="ae e">' + a[0] + '</div><div class="a1">' + a[1] + '</div><div class="a2">' + a[2] + '</div><button class="ax">✖</button>';
+  $('#layer').appendChild(el);
+  const w = el.offsetWidth, h = el.offsetHeight;
+  el.style.left = rand(st.left + 10, Math.max(st.left + 10, st.right - w - 50)) + 'px';
+  el.style.top = rand(st.top + 40, Math.max(st.top + 40, st.bottom - h - 10)) + 'px';
+  const ad = { el, t:11 }; R.ads.push(ad);
+  el.addEventListener('pointerdown', ev => {
+    ev.stopPropagation(); ev.preventDefault();
+    if (!R || R.paused || R.done) return;
+    if (ev.target.closest('.ax')) { Snd.pop(); closeAd(ad); return; }
+    // tapped the ad itself: scammed
+    R.scams++; R.kita = Math.max(0, R.kita - 10); paintMoney();
+    Snd.scam(); FX.slam('🤡'); Voice.say('Na-scam ka!', true); chat(pick(CHAT.ad));
+    FX.pop(ev.clientX, ev.clientY, 'NA-SCAM KA! -₱10 🤡', 'awit');
+    closeAd(ad);
+  });
+  Snd.slide(true); chat('may ad na naman 🙄');
+}
+function closeAd(ad){
+  const i = R.ads.indexOf(ad); if (i >= 0) R.ads.splice(i, 1);
+  ad.el.classList.add('bye'); setTimeout(() => ad.el.remove(), 200);
+}
+function spawnFlies(n){
+  for (let k = 0; k < n; k++) {
+    const el = document.createElement('div'); el.className = 'fly e'; el.textContent = '🪰';
+    const f = { el, x:rand(0.15, 0.85) * innerWidth, y:rand(0.3, 0.8) * innerHeight, vx:rand(-220, 220), vy:rand(-220, 220) };
+    el.addEventListener('pointerdown', ev => { ev.stopPropagation(); ev.preventDefault(); if (R && !R.paused && !R.done) swat(f); });
+    $('#layer').appendChild(el); R.flies.push(f);
+  }
+  updateFlies(0); Snd.buzzOn();
+}
+function updateFlies(dt){
+  const W = innerWidth, H = innerHeight, top = Math.max(90, H * 0.14);
+  R.flyT -= dt;
+  for (const f of R.flies) {
+    f.vx += rand(-1000, 1000) * dt; f.vy += rand(-1000, 1000) * dt;
+    const sp = Math.hypot(f.vx, f.vy), mx = 300; if (sp > mx) { f.vx *= mx / sp; f.vy *= mx / sp; }
+    f.x += f.vx * dt; f.y += f.vy * dt;
+    if (f.x < 45) { f.x = 45; f.vx = Math.abs(f.vx); } if (f.x > W - 45) { f.x = W - 45; f.vx = -Math.abs(f.vx); }
+    if (f.y < top) { f.y = top; f.vy = Math.abs(f.vy); } if (f.y > H - 45) { f.y = H - 45; f.vy = -Math.abs(f.vy); }
+    f.el.style.transform = 'translate(' + (f.x - 40) + 'px,' + (f.y - 40) + 'px) scaleX(' + (f.vx < 0 ? 1 : -1) + ')';
+  }
+  if (R.flyT <= 0 && R.flies.length) { R.flies.slice().forEach(f => f.el.remove()); R.flies.length = 0; Snd.buzzOff(); FX.pop(innerWidth / 2, innerHeight * 0.3, 'Umalis na ang langaw 🪰👋', 'small'); }
+}
+function swat(f){
+  const i = R.flies.indexOf(f); if (i < 0) return;
+  R.flies.splice(i, 1); f.el.remove();
+  R.swats++; R.kita += 2; paintMoney();
+  Snd.pak(); FX.pop(f.x, f.y, 'PAK! +₱2', 'cash'); FX.confetti(f.x, f.y, 14, 0.5);
+  if (!R.flies.length) { Snd.buzzOff(); Snd.cheer(); FX.banner('🪰 WALA NANG LANGAW! 🪰', '#00b84a', 1.4); Voice.say('Malinis na!'); }
+}
+function setSpot(x, y){ const d = $('#dark'); if (d) { d.style.setProperty('--x', x + 'px'); d.style.setProperty('--y', y + 'px'); } }
+function addHype(v){ if (R.hyperT > 0 || R.hype >= 100) return; R.hype = Math.min(100, R.hype + v); if (R.hype >= 100) { Snd.fanfare(2); Voice.say('Hype ready! Pindutin mo!', true); } paintHype(); }
+function paintHype(){
+  const h = $('#hype'); if (!h) return;
+  h.style.setProperty('--h', (R.hyperT > 0 ? R.hyperT / HYPER_LEN * 100 : R.hype) + '%');
+  h.classList.toggle('ready', R.hype >= 100 && R.hyperT <= 0);
+}
+function goHyper(){
+  const h = $('#hype');
+  if (R.hyperT > 0) return;
+  if (R.hype < 100) { Snd.bonk(); const pt = FX.center(h); FX.pop(pt.x, pt.y - 60, 'Hindi pa puno! 🔥', 'small'); return; }
+  R.hyperT = HYPER_LEN; R.hype = 0;
+  $('#rush').classList.add('hyper');
+  Snd.airhorn(); Snd.siren(); Snd.musicLayer(3); FX.mega('HYPER MODE!!'); FX.shake(3); FX.shower(120);
+  Voice.say('HYPER MODE! Doble kita!', true);
+  paintHype();
+}
+function endHyper(){
+  R.hyperT = 0; $('#rush').classList.remove('hyper');
+  Snd.musicLayer(Math.min(2, Math.floor(R.combo / 5))); Snd.slide(false);
+  FX.pop(innerWidth / 2, innerHeight * 0.3, 'Tapos na ang hype 😮‍💨', 'small');
+  paintHype();
 }
 function flyCoin(from, done){
   const m = $('#hudMoney'); if (!m) { done(); return; }
@@ -924,13 +1340,15 @@ function flyCoin(from, done){
 function comboFx(){
   paintCombo();
   const c = R.combo;
+  if (R.hyperT <= 0) Snd.musicLayer(Math.min(2, Math.floor(c / 5)));
   const tier = COMBO_TIERS.filter(t => t[0] === c)[0] || (c > 25 && c % 5 === 0 ? ['', 'HALIMAW!!'] : null);
   if (tier) {
     FX.mega(tier[1] + ' x' + c);
     const lvl = c >= 10 ? 3 : c >= 5 ? 2 : 1;
     FX.shake(lvl);
     FX.confetti(innerWidth / 2, innerHeight * 0.42, 30 + c * 6, 0.8 + lvl * 0.25);
-    if (c >= 10) Snd.airhorn(); else Snd.fanfare(lvl);
+    Voice.say(tier[1].replace(/!/g, '') + '!', true);
+    if (c >= 10) { Snd.airhorn(); Snd.cheer(); } else Snd.fanfare(lvl);
   } else if (c >= 3) FX.shake(1);
 }
 function paintCombo(){
@@ -938,8 +1356,10 @@ function paintCombo(){
   if (R.combo >= 2) { el.classList.add('on'); el.innerHTML = '<span class="e">🔥</span> x' + R.combo; el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump'); setTimeout(() => el.classList.remove('bump'), 150); }
   else el.classList.remove('on');
 }
-function breakCombo(){ if (R.combo > 0) { R.combo = 0; paintCombo(); } }
+function breakCombo(){ if (R.combo > 0) { R.combo = 0; paintCombo(); if (R.hyperT <= 0) Snd.musicLayer(0); } }
 function leave(c, why){
+  if (c.gone) return;
+  if (R.sukli && R.sukli.c === c) endSukli('slow');
   if (c.gone) return;
   c.gone = true; R.slots[c.slot] = null;
   const el = c.el;
@@ -949,7 +1369,7 @@ function leave(c, why){
     el.classList.add('happy');
   } else {
     const pt = FX.center($('.face', el));
-    if (why === 'lost') { R.lost++; Snd.awit(); FX.pop(pt.x, pt.y - 30, 'AWIT 😩', 'awit'); breakCombo(); }
+    if (why === 'lost') { R.lost++; Snd.awit(); FX.pop(pt.x, pt.y - 30, 'AWIT 😩', 'awit'); breakCombo(); chat(pick(CHAT.sad)); if (Math.random() < 0.4) Voice.say('Awit!'); }
     else if (why === 'ubos') { R.ubos++; Snd.bonk(); FX.pop(pt.x, pt.y - 30, 'Sayang! 😢', 'small'); }
     el.querySelector('.face').textContent = '😩';
     el.classList.add('sad');
@@ -964,25 +1384,42 @@ function useEmergency(){
 function fireEvent(ev){
   const rush = $('#rush');
   if (ev === 'suki') {
-    Snd.fanfare(3); FX.shower(80);
+    Snd.fanfare(3); FX.shower(80); Voice.say('Suki day! Doble bili!', true);
     FX.banner('⭐ SUKI DAY! ⭐<small>Doble bili ng mga suki!</small>', '#ffb000', 2.2);
-    return;
+    R.evLog.push({ ev }); return;
   }
+  if (ev === 'fiesta') {
+    R.fiestaT = 12; Snd.jeep(); Snd.cheer(); FX.shower(160); FX.shake(2); Voice.say('Fiesta! Dagsa ang tao!', true);
+    FX.banner('🎉 FIESTA! 🎉<small>Dagsa ang tao! Bilis!</small>', '#ff2e88', 2.2);
+    R.evLog.push({ ev }); return;
+  }
+  if (ev === 'langaw') {
+    R.flyT = 16; spawnFlies(6); Voice.say('Langaw attack!', true);
+    FX.banner('🪰 LANGAW ATTACK! 🪰<small>Tapikin mo sila! Naiinip ang customers!</small>', '#5d4037', 2.2);
+    R.evLog.push({ ev }); return;
+  }
+  const saved = useEmergency();
+  R.evLog.push({ ev, saved });
   if (ev === 'ulan') {
-    const saved = useEmergency(); R.saved = saved;
     Snd.thunder(); Snd.rainOn(); Snd.musicMuffle(true); FX.shake(2);
     rush.classList.add('raining'); if (saved) rush.classList.add('light');
-    FX.setRain(saved ? 0.45 : 1);
+    FX.setRain(saved ? 0.45 : 1); Voice.say('Ulan alert!', true);
     if (saved) { FX.banner('🌧️ ULAN ALERT! 🌧️<small>☂️ Emergency fund! Tuloy ang benta!</small>', '#2463ff', 2.4); Snd.fanfare(2); }
     else { R.rainMul = 2; FX.banner('🌧️ ULAN ALERT! 🌧️<small>Konti ang tao... 😩</small>', '#2463ff', 2.4); }
     return;
   }
+  if (ev === 'brownout') {
+    Snd.slide(false); Snd.bruh(); Voice.say('Brownout!', true);
+    if (saved) { FX.banner('⚡ BROWNOUT! ⚡<small>🔋 Emergency fund: may generator ka!</small>', '#333', 2.4); Snd.fanfare(2); }
+    else { R.darkT = 9; rush.classList.add('brownout'); Snd.musicMuffle(true); FX.banner('⚡ BROWNOUT! ⚡<small>Tap para may ilaw 🔦</small>', '#333', 2.2); }
+    return;
+  }
   if (ev === 'lipat') {
-    const saved = useEmergency(); R.saved = saved;
-    R.frozen = 1.9; // game-time freeze while the stall slides
+    R.frozen = 1.9;
+    if (R.sukli) endSukli('slow');
     R.custs.slice().forEach(c => leave(c, 'quiet'));
     breakCombo(); clearHint();
-    Snd.whoosh(); FX.shake(3);
+    Snd.whoosh(); Snd.jeep(); FX.shake(3); Voice.say('Lipat pwesto!', true);
     const st = $('#stage'); st.classList.remove('lipat'); void st.offsetWidth; st.classList.add('lipat');
     setTimeout(() => { if (rush.classList.contains('on')) rush.classList.toggle('spot2'); }, 720 / SPEED);
     if (saved) { FX.banner('🛺 LIPAT PWESTO!<small>☂️ Emergency fund! Walang bawas!</small>', '#ff6a00', 2.4); Snd.fanfare(2); }
@@ -995,52 +1432,64 @@ function fireEvent(ev){
 }
 
 /* ---- pause / end ---- */
-ACT.pause = () => { if (!R || R.done) return; R.paused = true; $('#pauseOv').classList.add('on'); Snd.musicStop(); Snd.rainOff(); };
+ACT.pause = () => {
+  if (!R || R.done) return; R.paused = true; $('#pauseOv').classList.add('on');
+  Snd.musicStop(); Snd.rainOff(); Snd.buzzOff(); Voice.stop(); FX.setEmoji(0);
+};
 ACT.resume = () => {
   if (!R) return; R.paused = false; $('#pauseOv').classList.remove('on'); R.last = now();
-  Snd.musicStart(PRICES[R.p.price].bpm); if ($('#rush').classList.contains('raining')) { Snd.rainOn(); Snd.musicMuffle(true); }
+  Snd.musicStart(PRICES[R.p.price].bpm); Snd.musicLayer(R.hyperT > 0 ? 3 : Math.min(2, Math.floor(R.combo / 5)));
+  if ($('#rush').classList.contains('raining')) { Snd.rainOn(); Snd.musicMuffle(true); }
+  if (R.flies.length) Snd.buzzOn();
 };
 document.addEventListener('visibilitychange', () => { if (document.hidden && R && !R.done && !R.paused && $('#rush').classList.contains('on')) ACT.pause(); });
+function rushCleanup(){
+  Snd.musicStop(); Snd.rainOff(); Snd.buzzOff(); Snd.onBeat = null; FX.setRain(0); FX.setEmoji(0);
+  if (R) { R.ads.slice().forEach(a => a.el.remove()); R.ads.length = 0; R.flies.forEach(f => f.el.remove()); R.flies.length = 0; }
+}
 function endRushQuiet(){
   if (R) R.done = true;
-  Snd.musicStop(); Snd.rainOff(); FX.setRain(0);
+  rushCleanup(); Voice.stop();
 }
 function endDay(){
   if (R.done) return;
+  if (R.sukli) endSukli('slow');
   R.done = true;
   clearHint();
   R.custs.slice().forEach(c => leave(c, 'quiet'));
-  Snd.musicStop(); Snd.rainOff(); FX.setRain(0);
-  Snd.chaching(0);
+  rushCleanup();
+  const rush = $('#rush'); rush.classList.remove('hyper', 'brownout');
+  Snd.chaching(0); Snd.cheer(); Voice.say('Sarado na!', true);
   FX.banner('SARADO NA! <span class="e">🌙</span>', '#7b2ff7', 1.6);
   const p = R.p;
   p.kitaByDay.push(R.kita); p.sales += R.sales; p.lost += R.lost; p.bestCombo = Math.max(p.bestCombo, R.bestCombo);
-  p.lastEvent = R.ev && R.ev !== 'suki' ? { ev:R.ev, saved:R.saved } : (R.ev === 'suki' ? { ev:'suki' } : null);
-  const snap = { kita:R.kita, sales:R.sales, lost:R.lost, best:R.bestCombo, ubos:R.ubos, tita:R.tita };
+  p.lastEvents = R.evLog.slice();
+  const snap = { kita:R.kita, sales:R.sales, lost:R.lost, best:R.bestCombo, ubos:R.ubos, tita:R.tita, scams:R.scams, sukliOk:R.sukliOk, swats:R.swats, boss:R.bossServed };
   setTimeout(() => renderSummary(snap), 1500 / Math.min(SPEED, 3));
 }
 
 /* ============ SUMMARY ============ */
 function renderSummary(d){
   const p = cur();
-  let note = '';
-  if (p.lastEvent) {
-    if (p.lastEvent.ev === 'ulan') note = p.lastEvent.saved ? '☂️ Iniligtas ka ng Emergency fund sa ulan!' : '🌧️ Inulan ka! Tip: lagyan ang ☂️ EMERGENCY jar.';
-    if (p.lastEvent.ev === 'lipat') note = p.lastEvent.saved ? '☂️ Emergency fund: walang nasayang na oras!' : '🚚 Napalipat ka! Tip: lagyan ang ☂️ EMERGENCY jar.';
-    if (p.lastEvent.ev === 'suki') note = '⭐ Salamat sa mga suki! ⭐';
-  }
+  const notes = (p.lastEvents || []).map(e => {
+    const n = EVN[e.ev][0] + ' ' + EVN[e.ev][1];
+    if (e.ev === 'suki' || e.ev === 'fiesta') return n + ' 🥳';
+    if (e.ev === 'langaw') return n + ': ' + d.swats + ' napatay';
+    return e.saved ? n + ': ☂️ ligtas!' : n + ' 😩 (Tip: ☂️ EMERGENCY)';
+  });
   const stat = (e, v, l) => '<div class="stat"><span class="e">' + e + '</span><b>' + v + '</b>' + l + '</div>';
   $('#summary').innerHTML =
     '<div class="ttl">ARAW ' + p.day + ' — SARADO NA! <span class="e">🌙</span></div>' +
     '<div class="sub">KITA NGAYONG ARAW</div>' +
     '<div class="bigmoney" id="sumMoney">₱0</div>' +
-    '<div class="stats">' + stat('🛒', d.sales, 'benta') + stat('🔥', 'x' + d.best, 'best combo') + stat('😩', d.lost, 'awit') +
-      (d.ubos ? stat('📦', d.ubos, 'ubos') : '') + (d.tita ? stat('🧐', d.tita, 'tita moments') : '') + '</div>' +
-    (note ? '<div class="chip" style="font-size:calc(var(--u)*3.4)">' + note + '</div>' : '') +
+    '<div class="stats">' + stat('🛒', d.sales, 'benta') + stat('🔥', 'x' + d.best, 'combo') + stat('😩', d.lost, 'awit') +
+      (d.sukliOk ? stat('🧠', d.sukliOk, 'tamang sukli') : '') + (d.scams ? stat('🤡', d.scams, 'na-scam') : '') +
+      (d.boss ? stat('👸', d.boss, 'boss') : '') + (d.ubos ? stat('📦', d.ubos, 'ubos') : '') + (d.tita ? stat('🗿', d.tita, 'tita') : '') + '</div>' +
+    (notes.length ? '<div class="chip" style="font-size:calc(var(--u)*3.2);white-space:normal;text-align:center">' + notes.join(' · ') + '</div>' : '') +
     '<button class="btn big wig" data-a="tojars" style="--bg:var(--green)">' + (d.kita > 0 ? 'HATIIN ANG KITA! ▶' : (p.day < DAYS ? 'BUKAS ULIT! ▶' : 'TINGNAN ANG SCORE! ▶')) + '</button>';
   show('summary');
   G.lastKita = d.kita;
-  countUp($('#sumMoney'), d.kita, 1100, () => { Snd.chaching(6); if (d.kita > 0) FX.confetti(innerWidth / 2, innerHeight * 0.35, 70, 1); });
+  countUp($('#sumMoney'), d.kita, 1100, () => { Snd.chaching(6); Snd.airhorn(); if (d.kita > 0) FX.confetti(innerWidth / 2, innerHeight * 0.35, 90, 1.1); });
 }
 function countUp(el, to, ms, done){
   const t0 = now(); let lastTick = 0, i = 0;
@@ -1096,8 +1545,8 @@ function paintJars(){
       else if (amt.puhunan >= STOCK_FULL) { h.textContent = '✅ Puno ang stock bukas!'; h.classList.add('good'); }
       else { h.textContent = 'Kulang pa ₱' + (STOCK_FULL - amt.puhunan) + ' para bukas'; h.classList.add('bad'); }
     } else if (k === 'emergency') {
-      if (last) h.textContent = 'Wala nang ulan! 😆';
-      else if (amt.emergency >= EMERGENCY_COST) { h.textContent = '✅ Ligtas sa ulan/lipat!'; h.classList.add('good'); }
+      if (last) h.textContent = 'Wala nang sakuna! 😆';
+      else if (amt.emergency >= EMERGENCY_COST) { h.textContent = '✅ Ligtas x' + Math.floor(amt.emergency / EMERGENCY_COST) + ' (ulan/lipat/brownout)'; h.classList.add('good'); }
       else h.textContent = '₱' + EMERGENCY_COST + ' = 1 ligtas ☂️';
     } else { h.textContent = 'SCORE MO! 🏆'; h.classList.add('good'); }
   });
